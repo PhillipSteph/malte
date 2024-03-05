@@ -9,17 +9,14 @@
     
     <img src="eliott.jpg" id="eliott" onclick="eliott()">
 </img>
-<audio controls autoplay>
-	<source src="eliott.mp3">
-  Your browser does not support the audio element.
-  </audio>
 
 <script>
+alert("Drückmich");
 var i = 0;
 function eliott(){
-
+	var audio = new Audio('eliott.mp3');
+	audio.play();
 alert("YOOOO ICH BIN ELIOTT HÖR AUF MICH ANZUFASSEN")
-
 }
 function rot( a ){
         const rotated = document.getElementById("eliott");
