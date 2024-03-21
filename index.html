@@ -7,19 +7,12 @@
 </head>
 <body id = "body">
     
-    <img src="malte.png" id="eliott" onclick="eliott()">
+    <img src="malte.png" id="eliott" ">
 </img>
 
 <script>
-alert("Drückmich");
 var i = 0;
-function eliott(){
-	playmusic();
-	setInterval(() => {
-		playmusic();
-	}, 54000);
-	alert("YOOOO ICH BIN ELIOTT HÖR AUF MICH ANZUFASSEN")
-}
+
 function rot( a ){
         const rotated = document.getElementById("eliott");
 
@@ -30,10 +23,7 @@ function col( a ){
     document.body.style.backgroundColor = "#";
 
 }
-function playmusic(){
-	var audio = new Audio('eliott.mp3');
-	audio.play();
-}
+
 var i = 0;
 setInterval(() => {
     i++;
