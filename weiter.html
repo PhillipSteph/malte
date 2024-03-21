@@ -6,29 +6,20 @@
     <title>Eliott guck mal her du Affe</title>
 </head>
 <body id = "body">
-    <div id="time" style="position:absolute;top:20%;bottom:20%;left:20%;right:20%;background-color:#00000000;">Seit 43h erster</div>
-    <div id="time" style="font-size: 10%;color:white;position:absolute;top:20%;bottom:20%;left:20%;right:20%;background-color:#00000000;">Seit 43h erster</div>
     <img src="malte.png" id="eliott" ">
 </img>
 
 <script>
-updatetime();
-var i = 0;
-function rot( a ){
+	let i = 0;
+function rot(){
+	i++;
         const rotated = document.getElementById("eliott");
-        rotated.style.transform = "rotate("+a+"deg)";
+        rotated.style.transform = "rotate("+i+"deg)";
 }
 function col( a ){
     document.body.style.backgroundColor = "#";
 }
-function updatetime(){
-	console.log("I work");
-let start = 63877471252;
-const d = new Date();
-let time = (d.getTime() - start)/36000000000 ;
-document.getElementById("time").innerHTML = "Stunden seit wir Erster sind: "+time;
-}
-	setinterval(updatetime,1000);
+setintervall(rot(),5);
 var i = 0;
 </script>
 <style>
