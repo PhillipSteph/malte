@@ -11,6 +11,7 @@
 </img>
 
 <script>
+updatetime();
 var i = 0;
 
 function rot( a ){
@@ -27,9 +28,9 @@ function updatetime(){
 	console.log("I work");
 let start = 63877471252;
 const d = new Date();
-let time = d.getTime() - start;
+let time = (d.getTime() - start)/3600000 ;
 
-document.getElementById("time").innerHTML = "Millisekunden seit wir Erster sind: "+time;
+document.getElementById("time").innerHTML = "Stunden seit wir Erster sind: "+time;
 
 }
 var i = 0;
