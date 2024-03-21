@@ -13,15 +13,11 @@
 
 var i = 0;
 
-
 function rot( a ){
         const rotated = document.getElementById("eliott");
 
-    document.body.style.backgroundColor = "#";
-
+        rotated.style.transform = "rotate("+a+"deg)";
 }
-
-var i = 0;
 setInterval(() => {
     i++;
     rot(i);
