@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliott guck mal her du Affe</title>
+    <title>Malte.png</title>
 </head>
 <body id = "body">
     <img src="malte.png" id="eliott" ">
 </img>
 
 <script>
-	let i = 0;
-function rot(){
-	i++;
-        const rotated = document.getElementById("eliott");
-        rotated.style.transform = "rotate("+i+"deg)";
-}
-function col( a ){
-    document.body.style.backgroundColor = "#";
-}
-setintervall(rot(),5);
+
 var i = 0;
+
+
+function rot( a ){
+        const rotated = document.getElementById("eliott");
+
+    document.body.style.backgroundColor = "#";
+
+}
+
+var i = 0;
+setInterval(() => {
+    i++;
+    rot(i);
+}, 5);
 </script>
 <style>
 #eliott {
