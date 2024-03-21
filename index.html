@@ -6,7 +6,7 @@
     <title>Eliott guck mal her du Affe</title>
 </head>
 <body id = "body">
-    <div style="position:absolute;top:20%;bottom:20%;left:20%;right:20%;background-color:#00000000;">Seit 43h erster</div>
+    <div id="time" style="position:absolute;top:20%;bottom:20%;left:20%;right:20%;background-color:#00000000;">Seit 43h erster</div>
     <img src="malte.png" id="eliott" ">
 </img>
 
@@ -23,16 +23,22 @@ function col( a ){
     document.body.style.backgroundColor = "#";
 
 }
+function updatetime(){
+val start = 63877471252;
+const d = new Date();
+let time = d.getTime() - start;
 
+
+const timediv = document.getElementById("time");
+timediv.innerHTML = "Millisekunden seit wir Erster sind: "+time;
+
+}
 var i = 0;
 setInterval(() => {
     i++;
     rot(i);
+	updatetime();
 }, 5);
-setInterval(() => {
-    i++;
-    rot(i);
-}, 4);
 
 
 </script>
