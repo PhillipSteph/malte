@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
   <style>
   .h1 {
   font-size: 30pt;
@@ -17,7 +19,10 @@
 </head>
 <body id = "body" >
   <div class="h1">Wir sind erster seit</div>
-  <div id="time" class="h1"></div>  
+  <div id="days" class="h1"></div>  
+  <div id="hours" class="h1"></div>
+  <div id="minutes" class="h1"></div>
+  <div id="seconds" class="h1"></div>
 <script>
 updatetime();
  
@@ -32,7 +37,10 @@ let days = Math.trunc(timepassed/(3600000*24))
 let hours = Math.trunc(timepassed/3600000)-(days*24)
 let minutes = d.getMinutes()+2
  
-document.getElementById("time").innerHTML = days+" tagen "+hours+" stunden "+minutes+" minuten "+seconds+ " sekunden";
+document.getElementById("days").innerHTML = days+" tagen"
+document.getElementById("hours").innerHTML = hours+" stunden"
+document.getElementById("minutes").innerHTML = minutes+" minuten"
+document.getElementById("seconds").innerHTML = seconds+" sekunden"
 }
  
 setInterval(() => {
