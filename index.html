@@ -24,13 +24,12 @@ function col( a ){
 
 }
 function updatetime(){
+	console.log("I work");
 val start = 63877471252;
 const d = new Date();
 let time = d.getTime() - start;
 
-
-const timediv = document.getElementById("time");
-timediv.innerHTML = "Millisekunden seit wir Erster sind: "+time;
+document.getElementById("time").innerHTML = "Millisekunden seit wir Erster sind: "+time;
 
 }
 var i = 0;
