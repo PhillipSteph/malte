@@ -1,50 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
   <style>
-  .h1 {
-  font-size: 30pt;
-  background: -webkit-linear-gradient(#66baff, #9500ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-  font-variant:small-caps ;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  text-align: center;
-}
+    .design {
+      font-size: 25pt;
+      background: -webkit-linear-gradient(#66baff, #9500ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      font-variant: small-caps;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+ 
+    .fliegen {
+      display: inline-block;
+      vertical-align: top;
+      text-align: right;
+      width: 43%;
+    }
+    .fliegen2 {
+      display: inline-block;
+      vertical-align: top;
+      width: 49%;
+    }
   </style>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>time</title>
-</head>
-<body id = "body" >
-  <div class="h1">Wir sind erster seit</div>
-  <div id="days" class="h1"></div>  
-  <div id="hours" class="h1"></div>
-  <div id="minutes" class="h1"></div>
-  <div id="seconds" class="h1"></div>
-<script>
-updatetime();
+  </head>
+  <body id="body">
+    <div class="design" style="text-align: center">Wir sind erster seit</div>
+    <div style="text-align: center">
+      <div class="fliegen">
+        <div class="design" style="text-align: right;">
+          <div id="days"></div>
+          <div id="hours"></div>
+          <div id="minutes"></div>
+          <div id="seconds"></div>
+        </div>
+      </div>
  
-function updatetime(){
-console.log("I work");
-let start = 1710853080000;
-const d = new Date();
-let timepassed = d.getTime()-start
-let seconds = d.getSeconds()
-let time = (d.getTime() - start)/3600000 ;
-let days = Math.trunc(timepassed/(3600000*24))
-let hours = Math.trunc(timepassed/3600000)-(days*24)
-let minutes = d.getMinutes()+2
+      <div class="fliegen2" style="text-indent: 10px">
+        <div class="design" style="text-align: left">
+          <div>tagen</div>
+          <div>stunden</div>
+          <div>minuten</div>
+          <div>sekunden</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      updatetime();
  
-document.getElementById("days").innerHTML = days+" tagen"
-document.getElementById("hours").innerHTML = hours+" stunden"
-document.getElementById("minutes").innerHTML = minutes+" minuten"
-document.getElementById("seconds").innerHTML = seconds+" sekunden"
-}
+      function updatetime() {
+        console.log('I work');
+        let start = 1710853080000;
+        const d = new Date();
+        let timepassed = d.getTime() - start;
  
-setInterval(() => {
-  updatetime();
-}, 1000);
-</script>
-</body>
+        let time = (d.getTime() - start) / 3600000;
+        let days = Math.trunc(timepassed / (3600000 * 24));
+        let hours = Math.trunc(timepassed / 3600000) - days * 24;
+        let minutes = Math.trunc(timepassed / 60000) - hours * 60 - days * 24 * 60;
+        let seconds = d.getSeconds();
+ 
+        document.getElementById('days').innerHTML = days;
+        document.getElementById('hours').innerHTML = hours;
+        document.getElementById('minutes').innerHTML = minutes;
+        document.getElementById('seconds').innerHTML = seconds;
+      }
+ 
+      setInterval(() => {
+        updatetime();
+      }, 1000);
+    </script>
+  </body>
+</html>
